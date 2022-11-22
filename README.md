@@ -4,8 +4,6 @@
 The goal of this project is to document common rules and scripts for the use of wazuh and to integrate various open source tools to enhance the functionality of wazuh. Cybersecurity is hard enough, let's work together.:smile:
 
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 
 ### Supported Rules and Integrations
 
