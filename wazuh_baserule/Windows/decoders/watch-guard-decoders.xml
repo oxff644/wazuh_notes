@@ -1,0 +1,139 @@
+<!--
+  -  Watch Guard decoders to be used in Wazuh
+-->
+
+
+<decoder name="watch_guard_decoder">
+    <prematch>^msg_id\.+$</prematch>
+</decoder>
+
+<decoder name="watch_guard_decoder">
+    <program_name />
+    <prematch>^msg_id\.+$</prematch>
+</decoder>
+
+<decoder name="watch_guard_fields">
+        <parent>watch_guard_decoder</parent>
+        <regex>msg_id="(\S+)"\s(\w+)\s\.+\s(\D\D\D)\s(\d+.\d+.\d+.\d+)\s(\d+.\d+.\d+.\d+)\.+</regex>
+        <order>msg_id,action,proto,srcip,dstip</order>
+</decoder>
+
+<decoder name="watch_guard_fields">
+        <parent>watch_guard_decoder</parent>
+        <regex>msg_id="(\S+)"\s(\w+)\s\.+\s(\D\D\D)\s20\s(\d+) (\d+.\d+.\d+.\d+) (\d+.\d+.\d+.\d+)\.+</regex>
+        <order>msg_id,action,proto,port,srcip,dstip</order>
+</decoder>
+
+<decoder name="watch_guard_fields">
+        <parent>watch_guard_decoder</parent>
+        <regex>msg="(\.+)"</regex>
+        <order>msg</order>
+</decoder>
+
+<decoder name="watch_guard_fields">
+        <parent>watch_guard_decoder</parent>
+        <regex>geo_src="(\.+)"</regex>
+        <order>geo_src</order>
+</decoder>
+
+<decoder name="watch_guard_fields">
+        <parent>watch_guard_decoder</parent>
+        <regex>geo_dst="(\.+)"</regex>
+        <order>geo_dst</order>
+</decoder>
+
+<decoder name="watch_guard_fields">
+        <parent>watch_guard_decoder</parent>
+        <regex>src_user="(\.+)"</regex>
+        <order>src_user</order>
+</decoder>
+
+<decoder name="watch_guard_fields">
+        <parent>watch_guard_decoder</parent>
+        <regex>rcvd_bytes="(\d+)"</regex>
+        <order>rcvd_bytes</order>
+</decoder>
+
+<decoder name="watch_guard_fields">
+        <parent>watch_guard_decoder</parent>
+        <regex>sent_bytes="(\.+)"</regex>
+        <order>sent_bytes</order>
+</decoder>
+
+<decoder name="watch_guard_fields">
+        <parent>watch_guard_decoder</parent>
+        <regex>proxy_act="(\.+)"</regex>
+        <order>proxy_act</order>
+</decoder>
+
+<decoder name="watch_guard_fields">
+        <parent>watch_guard_decoder</parent>
+        <regex>tls_profile="(\.+)"</regex>
+        <order>tls_profile</order>
+</decoder>
+
+<decoder name="watch_guard_fields">
+        <parent>watch_guard_decoder</parent>
+        <regex>tls_version="(\.+)"</regex>
+        <order>tls_version</order>
+</decoder>
+
+<decoder name="watch_guard_fields">
+        <parent>watch_guard_decoder</parent>
+        <regex>sni="(\.+)"</regex>
+        <order>sni</order>
+</decoder>
+
+<decoder name="watch_guard_fields">
+        <parent>watch_guard_decoder</parent>
+        <regex>cn="(\S+)"</regex>
+        <order>cn</order>
+</decoder>
+
+<decoder name="watch_guard_fields">
+        <parent>watch_guard_decoder</parent>
+        <regex>cert_issuer="(\.+)"</regex>
+        <order>cert_issuer</order>
+</decoder>
+
+<decoder name="watch_guard_fields">
+        <parent>watch_guard_decoder</parent>
+        <regex>cert_subject="(\.+)"</regex>
+        <order>cert_subject</order>
+</decoder>
+
+<decoder name="watch_guard_fields">
+        <parent>watch_guard_decoder</parent>
+        <regex>action="(\w+)"</regex>
+        <order>action</order>
+</decoder>
+
+<decoder name="watch_guard_fields">
+        <parent>watch_guard_decoder</parent>
+        <regex>app_id="(\.+)"</regex>
+        <order>app_id</order>
+</decoder>
+
+<decoder name="watch_guard_fields">
+        <parent>watch_guard_decoder</parent>
+        <regex>app_cat_id="(\.+)"</regex>
+        <order>app_cat_id</order>
+</decoder>
+
+<decoder name="watch_guard_fields">
+        <parent>watch_guard_decoder</parent>
+        <regex>app_name="(\.+)"</regex>
+        <order>app_name</order>
+</decoder>
+
+<decoder name="watch_guard_fields">
+        <parent>watch_guard_decoder</parent>
+        <regex>app_cat_name="(\.+)"</regex>
+        <order>app_cat_name</order>
+</decoder>
+
+<decoder name="watch_guard_fields">
+        <parent>watch_guard_decoder</parent>
+        <regex>sig_vers="(\.+)"</regex>
+        <order>sig_vers</order>
+</decoder>

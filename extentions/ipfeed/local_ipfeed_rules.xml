@@ -1,0 +1,49 @@
+<group name="local,attack,">
+    <rule id="110100" level="0">
+      <if_group>syslog|windows|web-log|firewall</if_group>
+      <list field="srcip" lookup="address_match_key">etc/lists/blacklist-alienvault</list>
+      <description>Source IP in AlienVault Feed</description>
+      <group>ip_reputation</group>
+    </rule>
+
+    <rule id="110101" level="0">
+      <if_group>syslog|windows|web-log|firewall</if_group>
+      <list field="srcip" lookup="address_match_key">etc/lists/blacklist-dshield</list>
+      <description>Source IP in DShield Feed</description>
+      <group>ip_reputation</group>
+    </rule>
+
+    <rule id="110102" level="0">
+      <if_group>syslog|windows|web-log|firewall</if_group>
+      <list field="srcip" lookup="address_match_key">etc/lists/blacklist-et_compromised</list>
+      <description>Source IP in ET Compromised Feed</description>
+      <group>ip_reputation</group>
+    </rule>
+
+    <rule id="110103" level="0">
+      <if_group>syslog|windows|web-log|firewall</if_group>
+      <list field="dstip" lookup="address_match_key">etc/lists/blacklist-alienvault</list>
+      <description>Destination IP in AlienVault Feed</description>
+      <group>ip_reputation</group>
+    </rule>
+
+    <rule id="110104" level="0">
+      <if_group>syslog|windows|web-log|firewall</if_group>
+      <list field="dstip" lookup="address_match_key">etc/lists/blacklist-dshield</list>
+      <description>Destination IP in DShield Feed</description>
+      <group>ip_reputation</group>
+    </rule>
+
+    <rule id="110105" level="0">
+      <if_group>syslog|windows|web-log|firewall</if_group>
+      <list field="dstip" lookup="address_match_key">etc/lists/blacklist-et_compromised</list>
+      <description>Destination IP in ET Compromised Feed</description>
+      <group>ip_reputation</group>
+    </rule>
+
+    <rule id="110112" level="12">
+      <if_group>ip_reputation</if_group>
+      <description>Bad IP Reputation Detected</description>
+    </rule>
+
+</group>

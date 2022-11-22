@@ -1,0 +1,36 @@
+<group name="CiscoAMP,">
+  <rule id="100110" level="0">
+    <decoded_as>json</decoded_as>
+    <match>amp.cisco</match>
+    <description>CiscoAMPlogs</description>
+    <options>no_full_log</options>
+  </rule>
+
+  <rule id="100111" level="3">
+    <if_sid>100110</if_sid>
+    <field name="severity">Low</field>
+    <description>CiscoAMP Severity: Low </description>
+    <options>no_full_log</options>
+  </rule>
+
+  <rule id="100112" level="8">
+    <if_sid>100110</if_sid>
+    <field name="severity">Medium</field>
+    <description>CiscoAMP Severity: Medium </description>
+    <options>no_full_log</options>
+  </rule>
+
+  <rule id="100113" level="10">
+    <if_sid>100110</if_sid>
+    <field name="severity">High</field>
+    <description>CiscoAMP Severity: High </description>
+    <options>no_full_log</options>
+  </rule>
+
+  <rule id="100114" level="12">
+    <if_sid>100110</if_sid>
+    <field name="severity">Critical</field>
+    <description>CiscoAMP Severity: Critical </description>
+    <options>no_full_log</options>
+  </rule>
+</group>

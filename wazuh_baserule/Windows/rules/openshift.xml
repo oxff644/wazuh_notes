@@ -1,0 +1,11 @@
+<!--
+  Catch all rule for Openshift
+  Requires to add openshift-custom decoder set.
+-->
+
+<group name="openshift-custom">
+  <rule id="100600" level="4">
+    <decoded_as>openshift-custom</decoded_as>
+    <description>Openshift event</description>
+  </rule>
+</group>

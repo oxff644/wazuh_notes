@@ -1,0 +1,15 @@
+<!-- Requires watch-guard decoders in place -->
+
+<group name="watch_guard_rules">
+  <rule id="100100" level="0">
+    <decoded_as>watch_guard_decoder</decoded_as>
+    <description>Alert from Watch Guard</description>
+  </rule>
+
+  <rule id="100101" level="3">
+    <if_sid>100100</if_sid>
+    <match>allow|Allow</match>
+    <description>Alert from Watch Guard: Allowed communication</description>
+  </rule>
+
+</group>

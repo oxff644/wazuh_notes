@@ -1,0 +1,275 @@
+<!-- Openshift decoders to be used with Openshift rule -->
+
+<decoder name="openshift-custom">
+    <prematch>\.+openshift\.+</prematch>
+</decoder>
+
+<decoder name="openshift-custom-fields">
+    <parent>openshift-custom</parent>
+    <regex>kind:(\w+)#</regex>
+    <order>kind</order>
+</decoder>
+
+<decoder name="openshift-custom-fields">
+    <parent>openshift-custom</parent>
+    <regex>apiVersion:(\.+)#</regex>
+    <order>apiVersion</order>
+</decoder>
+
+<decoder name="openshift-custom-fields">
+    <parent>openshift-custom</parent>
+    <regex>level:(\w+)#</regex>
+    <order>level</order>
+</decoder>
+
+<decoder name="openshift-custom-fields">
+    <parent>openshift-custom</parent>
+    <regex>auditID:(\.+)#</regex>
+    <order>auditID</order>
+</decoder>
+
+<decoder name="openshift-custom-fields">
+    <parent>openshift-custom</parent>
+    <regex>stage:(\w+)#</regex>
+    <order>stage</order>
+</decoder>
+
+<decoder name="openshift-custom-fields">
+    <parent>openshift-custom</parent>
+    <regex>requestURI:(\.+)#</regex>
+    <order>requestURI</order>
+</decoder>
+
+<decoder name="openshift-custom-fields">
+    <parent>openshift-custom</parent>
+    <regex>verb:(\w+)#</regex>
+    <order>verb</order>
+</decoder>
+
+<decoder name="openshift-custom-fields">
+    <parent>openshift-custom</parent>
+    <regex>"username"=>"(\.+)"</regex>
+    <order>user_username</order>
+</decoder>
+
+<decoder name="openshift-custom-fields">
+    <parent>openshift-custom</parent>
+    <regex>"uid"=>"(\.+)"</regex>
+    <order>user_uid</order>
+</decoder>
+
+<decoder name="openshift-custom-fields">
+    <parent>openshift-custom</parent>
+    <regex>"groups"=>[(\.+)]</regex>
+    <order>user_groups</order>
+</decoder>
+
+<decoder name="openshift-custom-fields">
+    <parent>openshift-custom</parent>
+    <regex>sourceIPs:[(\.+)]</regex>
+    <order>sourceIPs</order>
+</decoder>
+
+<decoder name="openshift-custom-fields">
+    <parent>openshift-custom</parent>
+    <regex>userAgent:(\.+)#</regex>
+    <order>userAgent</order>
+</decoder>
+
+<decoder name="openshift-custom-fields">
+    <parent>openshift-custom</parent>
+    <regex>"resource"=>"(\w+)"</regex>
+    <order>objectRef_resource</order>
+</decoder>
+
+<decoder name="openshift-custom-fields">
+    <parent>openshift-custom</parent>
+    <regex>"namespace"=>"(\w+)"</regex>
+    <order>objectRef_namespace</order>
+</decoder>
+
+<decoder name="openshift-custom-fields">
+    <parent>openshift-custom</parent>
+    <regex>objectRef:{\.+"name"=>"(\w+)"</regex>
+    <order>objectRef_name</order>
+</decoder>
+
+<decoder name="openshift-custom-fields">
+    <parent>openshift-custom</parent>
+    <regex>objectRef:{\.+"apiVersion"=>"(\w+)"</regex>
+    <order>objectRef_apiVersion</order>
+</decoder>
+
+<decoder name="openshift-custom-fields">
+    <parent>openshift-custom</parent>
+    <regex>responseStatus:{\.+"status"=>"(\w+)"</regex>
+    <order>responseStatus_status</order>
+</decoder>
+
+<decoder name="openshift-custom-fields">
+    <parent>openshift-custom</parent>
+    <regex>responseStatus:{\.+"message"=>"(\w+)"</regex>
+    <order>responseStatus_message</order>
+</decoder>
+
+<decoder name="openshift-custom-fields">
+    <parent>openshift-custom</parent>
+    <regex>responseStatus:{\.+"code"=>(\d+)}</regex>
+    <order>responseStatus_code</order>
+</decoder>
+
+<decoder name="openshift-custom-fields">
+    <parent>openshift-custom</parent>
+    <regex>requestReceivedTimestamp:(\.)#</regex>
+    <order>requestReceivedTimestamp</order>
+</decoder>
+
+<decoder name="openshift-custom-fields">
+    <parent>openshift-custom</parent>
+    <regex>stageTimestamp:(\.)#</regex>
+    <order>stageTimestamp</order>
+</decoder>
+
+<decoder name="openshift-custom-fields">
+    <parent>openshift-custom</parent>
+    <regex>annotations:{(\.+)}</regex>
+    <order>annotations</order>
+</decoder>
+
+<decoder name="openshift-custom-fields">
+    <parent>openshift-custom</parent>
+    <regex>k8s_audit_level:(\w+)#</regex>
+    <order>k8s_audit_level</order>
+</decoder>
+
+<decoder name="openshift-custom-fields">
+    <parent>openshift-custom</parent>
+    <regex>hostname:(\.+)#</regex>
+    <order>evt_hostname</order>
+</decoder>
+
+<decoder name="openshift-custom-fields">
+    <parent>openshift-custom</parent>
+    <regex>"type"=>"(\S+)"</regex>
+    <order>evt_type</order>
+</decoder>
+
+<decoder name="openshift-custom-fields">
+    <parent>openshift-custom</parent>
+    <regex>"record_id"=>"(\d+)"</regex>
+    <order>record_id</order>
+</decoder>
+
+<decoder name="openshift-custom-fields">
+    <parent>openshift-custom</parent>
+    <regex>message:type=(\S+)</regex>
+    <order>msg_type</order>
+</decoder>
+
+<decoder name="openshift-custom-fields">
+    <parent>openshift-custom</parent>
+    <regex>msg=(\w+\(\.+\)):</regex>
+    <order>msg</order>
+</decoder>
+
+<decoder name="openshift-custom-fields">
+    <parent>openshift-custom</parent>
+    <regex>table=(\w+)</regex>
+    <order>table</order>
+</decoder>
+
+<decoder name="openshift-custom-fields">
+    <parent>openshift-custom</parent>
+    <regex>KUBE-SERVICES:(\d+)</regex>
+    <order>kube_services</order>
+</decoder>
+
+<decoder name="openshift-custom-fields">
+    <parent>openshift-custom</parent>
+    <regex>family=(\d+)</regex>
+    <order>family</order>
+</decoder>
+
+<decoder name="openshift-custom-fields">
+    <parent>openshift-custom</parent>
+    <regex>entries=(\d+)</regex>
+    <order>entries</order>
+</decoder>
+
+<decoder name="openshift-custom-fields">
+    <parent>openshift-custom</parent>
+    <regex>op=(\S+)</regex>
+    <order>op</order>
+</decoder>
+
+<decoder name="openshift-custom-fields">
+    <parent>openshift-custom</parent>
+    <regex>pid=(\d+)</regex>
+    <order>pid</order>
+</decoder>
+
+<decoder name="openshift-custom-fields">
+    <parent>openshift-custom</parent>
+    <regex>subj=(\S+)</regex>
+    <order>subj</order>
+</decoder>
+
+<decoder name="openshift-custom-fields">
+    <parent>openshift-custom</parent>
+    <regex>comm="(\.+)"</regex>
+    <order>comm</order>
+</decoder>
+
+<decoder name="openshift-custom-fields">
+    <parent>openshift-custom</parent>
+    <regex>"ipaddr4"=>"(\S+)"</regex>
+    <order>pm_collector_ipaddr4</order>
+</decoder>
+
+<decoder name="openshift-custom-fields">
+    <parent>openshift-custom</parent>
+    <regex>"inputname"=>"(\S+)"</regex>
+    <order>pm_collector_inputname</order>
+</decoder>
+
+<decoder name="openshift-custom-fields">
+    <parent>openshift-custom</parent>
+    <regex>"collector"=>{\.+"name"=>"(\S+)"</regex>
+    <order>pm_collector_name</order>
+</decoder>
+
+<decoder name="openshift-custom-fields">
+    <parent>openshift-custom</parent>
+    <regex>"received_at"=>"(\S+)"</regex>
+    <order>pm_collector_received_at</order>
+</decoder>
+
+<decoder name="openshift-custom-fields">
+    <parent>openshift-custom</parent>
+    <regex>"version"=>"(\.+)"</regex>
+    <order>pm_collector_version</order>
+</decoder>
+
+<decoder name="openshift-custom-fields">
+    <parent>openshift-custom</parent>
+    <regex>timestamp:(\.+)#</regex>
+    <order>evt_timestamp</order>
+</decoder>
+
+<decoder name="openshift-custom-fields">
+    <parent>openshift-custom</parent>
+    <regex>viaq_index_name:(\.+)#</regex>
+    <order>viaq_index_name</order>
+</decoder>
+
+<decoder name="openshift-custom-fields">
+    <parent>openshift-custom</parent>
+    <regex>viaq_msg_id:(\.+)#</regex>
+    <order>viaq_msg_id</order>
+</decoder>
+
+<decoder name="openshift-custom-fields">
+    <parent>openshift-custom</parent>
+    <regex>"syslog"=>"(\.+)"</regex>
+    <order>openshift_labels_syslog</order>
+</decoder>

@@ -1,0 +1,71 @@
+<!-- Crowdstrike rules -->
+
+<group name="crowdstrike">
+
+  <rule id="195001" level="0">
+    <decoded_as>json</decoded_as>
+    <field name="metadata.customerIDString">\.+</field>
+    <field name="metadata.offset">\.+</field>
+    <field name="metadata.eventType">\.+</field>
+    <field name="metadata.eventCreationTime">\.+</field>
+    <field name="metadata.version">\.+</field>
+    <description>Crowdstrike parent alert</description>
+  </rule>
+
+  <rule id="195002" level="0">
+    <if_sid>195001</if_sid>
+    <field name="metadata.eventType">DetectionSummaryEvent</field>
+    <description>Crowdstrike alert: DetectionSummaryEvent</description>
+  </rule>
+
+  <rule id="195003" level="0">
+    <if_sid>195001</if_sid>
+    <field name="metadata.eventType">AuthActivityAuditEvent</field>
+    <description>Crowdstrike alert: AuthActivityAuditEvent</description>
+  </rule>
+
+  <rule id="195004" level="3">
+    <if_sid>195001</if_sid>
+    <field name="metadata.eventType">UserActivityAuditEvent</field>
+    <description>Crowdstrike alert: UserActivityAuditEvent</description>
+  </rule>
+
+  <rule id="195005" level="5">
+    <if_sid>195001</if_sid>
+    <field name="metadata.eventType">IncidentSummaryEvent</field>
+    <description>Crowdstrike alert: IncidentSummaryEvent</description>
+  </rule>
+
+  <rule id="195006" level="3">
+    <if_sid>195002</if_sid>
+    <field name="event.SeverityName">Low</field>
+    <description>Crowdstrike alert: Low severity event</description>
+  </rule>
+
+  <rule id="195007" level="5">
+    <if_sid>195002</if_sid>
+    <field name="event.SeverityName">Medium</field>
+    <description>Crowdstrike alert: Medium severity event</description>
+  </rule>
+
+  <rule id="195008" level="7">
+    <if_sid>195002</if_sid>
+    <field name="event.SeverityName">High</field>
+    <description>Crowdstrike alert: High severity event</description>
+  </rule>
+
+  <rule id="195009" level="3">
+    <if_sid>195003</if_sid>
+    <field name="event.Success">true</field>
+    <description>Crowdstrike alert: User authentication success</description>
+    <group>authentication_success</group>
+  </rule>
+
+  <rule id="195010" level="6">
+    <if_sid>195003</if_sid>
+    <field name="event.Success">false</field>
+    <description>Crowdstrike alert: User authentication failed</description>
+    <group>authentication_failed</group>
+  </rule>
+
+</group>

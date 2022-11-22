@@ -1,0 +1,11 @@
+<!--
+  Catch all rule for Forti. 
+  Requires Forti decoders in place.
+-->
+
+<group name="forti-custom">
+  <rule id="100500" level="5">
+    <decoded_as>forti-like</decoded_as>
+    <description>Forti event</description>
+  </rule>
+</group>
