@@ -1,12 +1,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About This Repo
 
-The goal of this project is to document common rules and scripts for the use of wazuh and to integrate various open source tools to enhance the functionality of wazuh.
-
-Here's why:
-* Detection rules can be a tricky business and we believe everyone should have access to a strong and growing ruleset.
-* Wazuh serves as a great EDR agent, however the default rulesets are rather laxed (in our opinion). We wanted to start building a strong repo of Wazuh rules for the community to implement themselves and expand upon as new threats arise.
-* Cybersecurity is hard enough, let's work together.:）
+The goal of this project is to document common rules and scripts for the use of wazuh and to integrate various open source tools to enhance the functionality of wazuh. Cybersecurity is hard enough, let's work together.:smile:
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -15,7 +10,8 @@ Here's why:
 ### Supported Rules and Integrations
 
 Below are the current rules and integrations currently contained within this repo. Integrations, such as Office365, Trend Micro, etc. will have scripts provided within their respective folders for use. Feel free to build upon these scripts and contribute back :smile:
-
+* [basic rules](https://github.com/oxff644/wazuh_notes/tree/main/wazuh_baserule)
+* [common scripts](https://github.com/oxff644/wazuh_notes/tree/main/scripts)
 * [Sysmon for Windows](https://github.com/oxff644/wazuh_notes/tree/main/extentions/Windows_Sysmon)
 * [Sysmon for Linux](https://github.com/oxff644/wazuh_notes/tree/main/extentions/Sysmon%20Linux)
 * [Office365](https://github.com/oxff644/wazuh_notes/tree/main/extentions/Office%20365)
