@@ -35,7 +35,7 @@ Below are the current rules and integrations currently contained within this rep
 
 ### Installation
 
-You can either manually download the .xml rule files onto your Wazuh Manager or make use of wazuh_rules.sh script
+You can either manually download the .xml rule files onto your Wazuh Manager or make use of wazuh_socfortress_rules.sh script
 
 ⚠️ USE AT OWN RISK: If you already have custom rules built out, there is a good chance duplicate Rule IDs will exists. This will casue the Wazuh-Manager service to fail! Ensure there are no conflicting Rule IDs and your custom rules are backed up prior to running the wazuh_rules.sh script!
 
