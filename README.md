@@ -30,7 +30,7 @@ Below are the current rules and integrations currently contained within this rep
 * [Powershell](https://github.com/oxff644/wazuh_notes/tree/main/extentions/Windows%20Powershell)
 * [Crowdstrike](https://github.com/oxff644/wazuh_notes/tree/main/extentions/Crowdstrike)
 * [Alienvault](https://github.com/oxff644/wazuh_notes/tree/main/extentions/Domain%20Stats)
-............
+* ............
 * Tessian - WIP
 
 ### Installation
